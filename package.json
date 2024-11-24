@@ -1,0 +1,17 @@
+{
+  "name": "cyberpunk-portfolio",
+  "version": "1.0.0",
+  "description": "A cyberpunk-themed professional portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server"
+  },
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "http-server": "^14.1.1",
+    "three": "^0.157.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

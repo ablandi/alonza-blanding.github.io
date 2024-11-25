@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetRunner OSINT Aggregator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cyber-container">
+        <header class="cyber-header">
+            <h1 class="glitch" data-text="NETRUNNER OSINT">NETRUNNER OSINT</h1>
+            <p class="cyber-subtitle">Data Collection & Analysis Interface</p>
+        </header>
+
+        <main class="cyber-main">
+            <div class="tool-grid">
+                <!-- Username Lookup -->
+                <section class="tool-card" id="username-section">
+                    <h2 class="tool-title">Username Reconnaissance</h2>
+                    <div class="tool-content">
+                        <div class="input-group">
+                            <input type="text" id="username-input" class="cyber-input" placeholder="Enter username">
+                            <div class="platform-toggles" id="platform-toggles">
+                                <label class="cyber-checkbox">
+                                    <input type="checkbox" value="twitter" checked>
+                                    <span>Twitter</span>
+                                </label>
+                                <label class="cyber-checkbox">
+                                    <input type="checkbox" value="github" checked>
+                                    <span>GitHub</span>
+                                </label>
+                                <label class="cyber-checkbox">
+                                    <input type="checkbox" value="instagram" checked>
+                                    <span>Instagram</span>
+                                </label>
+                            </div>
+                            <button onclick="searchUsername()" class="cyber-button">EXECUTE SEARCH</button>
+                        </div>
+                        <div class="results-container" id="username-results">
+                            <!-- Results will be populated here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Email Lookup -->
+                <section class="tool-card" id="email-section">
+                    <h2 class="tool-title">Email Intelligence</h2>
+                    <div class="tool-content">
+                        <div class="input-group">
+                            <input type="email" id="email-input" class="cyber-input" placeholder="Enter email address">
+                            <button onclick="searchEmail()" class="cyber-button">ANALYZE EMAIL</button>
+                        </div>
+                        <div class="results-container" id="email-results">
+                            <!-- Results will be populated here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Image Analysis -->
+                <section class="tool-card" id="image-section">
+                    <h2 class="tool-title">Image Metadata Extraction</h2>
+                    <div class="tool-content">
+                        <div class="input-group">
+                            <input type="file" id="image-input" class="cyber-input" accept="image/*">
+                            <button onclick="analyzeImage()" class="cyber-button">EXTRACT DATA</button>
+                        </div>
+                        <div class="results-container" id="image-results">
+                            <!-- Results will be populated here -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="cyber-footer">
+            <p>SYSTEM STATUS: <span id="system-status">OPERATIONAL</span></p>
+            <p>NetRunner OSINT Aggregator v1.0.0</p>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

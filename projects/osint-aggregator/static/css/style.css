@@ -1,0 +1,253 @@
+:root {
+    --neon-text-color: #f40;
+    --neon-border-color: #08f;
+    --primary-bg: #0a0a0a;
+    --secondary-bg: #1a1a1a;
+    --text-color: #fff;
+    --accent-color: #f40;
+    --success-color: #0f8;
+    --error-color: #f04;
+    --warning-color: #fa0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Share Tech Mono', monospace;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.cyber-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.cyber-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.glitch {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                 0.025em 0.04em 0 #fffc00;
+    animation: glitch 725ms infinite;
+}
+
+.glitch span {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cyber-subtitle {
+    font-size: 1.2rem;
+    color: var(--neon-border-color);
+    margin-top: 0.5rem;
+}
+
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.tool-card {
+    background: var(--secondary-bg);
+    border: 1px solid var(--neon-border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        transparent 0%,
+        rgba(8, 136, 255, 0.1) 50%,
+        transparent 100%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.tool-card:hover::before {
+    transform: translateX(100%);
+}
+
+.tool-title {
+    color: var(--neon-text-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.cyber-input {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--neon-border-color);
+    color: var(--text-color);
+    font-family: inherit;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.cyber-input:focus {
+    outline: none;
+    border-color: var(--neon-text-color);
+    box-shadow: 0 0 10px rgba(255, 68, 0, 0.3);
+}
+
+.cyber-button {
+    background: transparent;
+    border: 1px solid var(--neon-text-color);
+    color: var(--neon-text-color);
+    padding: 0.8rem 1.5rem;
+    font-family: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: var(--neon-text-color);
+    transition: transform 0.5s ease;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    z-index: -1;
+}
+
+.cyber-button:hover {
+    color: var(--primary-bg);
+}
+
+.cyber-button:hover::before {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+}
+
+.platform-toggles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cyber-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cyber-checkbox input {
+    display: none;
+}
+
+.cyber-checkbox span {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--neon-border-color);
+    transition: all 0.3s ease;
+}
+
+.cyber-checkbox input:checked + span {
+    background: var(--neon-border-color);
+    color: var(--primary-bg);
+}
+
+.results-container {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-left: 2px solid var(--neon-text-color);
+    min-height: 100px;
+}
+
+.cyber-footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--neon-border-color);
+}
+
+#system-status {
+    color: var(--success-color);
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                     0.025em 0.04em 0 #fffc00;
+    }
+    15% {
+        text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                     0.025em 0.04em 0 #fffc00;
+    }
+    16% {
+        text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+                     -0.05em -0.05em 0 #fffc00;
+    }
+    49% {
+        text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+                     -0.05em -0.05em 0 #fffc00;
+    }
+    50% {
+        text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+                     0 -0.04em 0 #fffc00;
+    }
+    99% {
+        text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+                     0 -0.04em 0 #fffc00;
+    }
+    100% {
+        text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
+                     -0.04em -0.025em 0 #fffc00;
+    }
+}
+
+@media (max-width: 768px) {
+    .cyber-container {
+        padding: 1rem;
+    }
+
+    .glitch {
+        font-size: 2rem;
+    }
+
+    .tool-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .platform-toggles {
+        flex-direction: column;
+    }
+}

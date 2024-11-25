@@ -228,10 +228,12 @@ body {
 }
 
 .cyber-list li::before {
-    content: '>';
-    position: absolute;
-    left: 0;
+    content: '⟶';  /* Using a consistent arrow character */
     color: var(--neon-blue);
+    margin-right: 8px;
+    font-size: 1.1em;
+    display: inline-block;
+    transform: translateY(-1px);
 }
 
 .certifications-grid {
@@ -357,6 +359,15 @@ body {
     font-size: 1.1rem;
     letter-spacing: 2px;
     text-shadow: 0 0 5px var(--neon-blue);
+}
+
+.view-text::before {
+    content: '⟶';  /* Using the same arrow for view text */
+    color: var(--neon-pink);
+    margin-right: 8px;
+    font-size: 1.1em;
+    display: inline-block;
+    transform: translateY(-1px);
 }
 
 .contact-form {
@@ -654,11 +665,12 @@ body {
 }
 
 .op-accomplishments-list li::before {
-    content: '>';
-    position: absolute;
-    left: 0;
+    content: '⟶';  /* Using a consistent arrow character */
     color: var(--neon-pink);
-    font-family: monospace;
+    margin-right: 8px;
+    font-size: 1.1em;
+    display: inline-block;
+    transform: translateY(-1px);
 }
 
 @media (max-width: 1200px) {
@@ -797,15 +809,12 @@ body {
 }
 
 .terminal-text::before {
-    content: '> learning';
-    position: absolute;
-    top: -10px;
-    left: 10px;
-    background: black;
-    padding: 0 10px;
-    font-size: 0.8rem;
+    content: '⟶';  /* Using the same arrow for terminal text */
     color: var(--neon-blue);
-    letter-spacing: 1px;
+    margin-right: 8px;
+    font-size: 1.1em;
+    display: inline-block;
+    transform: translateY(-1px);
 }
 
 .about-main {
@@ -898,4 +907,13 @@ body {
     .about-content {
         padding: 1rem;
     }
+}
+
+.cyber-arrow::before {
+    content: '⟶';  /* Using a consistent arrow character */
+    color: var(--neon-pink);
+    margin-right: 8px;
+    font-size: 1.1em;
+    display: inline-block;
+    transform: translateY(-1px);
 }

@@ -831,6 +831,60 @@ body {
     text-shadow: 0 0 5px var(--neon-blue);
 }
 
+.training-status {
+    display: inline-block;
+    background: rgba(255, 42, 109, 0.1);
+    border: 2px solid var(--neon-pink);
+    padding: 0.5rem 1.5rem;
+    margin: 1rem 0;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: statusPulse 2s infinite;
+    box-shadow: 0 0 10px var(--neon-pink);
+}
+
+@keyframes statusPulse {
+    0% {
+        box-shadow: 0 0 10px var(--neon-pink);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--neon-pink), 0 0 30px var(--neon-pink);
+    }
+    100% {
+        box-shadow: 0 0 10px var(--neon-pink);
+    }
+}
+
+.training-status::before {
+    content: '⚠';
+    margin-right: 8px;
+    color: var(--neon-pink);
+}
+
+.training-status::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid var(--neon-pink);
+    animation: borderFlash 1.5s infinite;
+}
+
+@keyframes borderFlash {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 @media (max-width: 768px) {
     .about-stats {
         flex-direction: column;

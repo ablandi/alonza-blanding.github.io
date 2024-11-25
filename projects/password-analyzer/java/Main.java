@@ -172,23 +172,57 @@ class PasswordAnalyzer {
     }
 }
 
+/*
+ * Password Strength Checker Program
+ * 
+ * Think of this program like a security guard for passwords. It looks at a password
+ * and tells you how strong it is and how to make it better. Here's what it checks:
+ * 
+ * 1. Length: Is the password long enough? (8-30 characters)
+ * 2. Variety: Does it use different types of characters?
+ *    - Capital letters (A, B, C...)
+ *    - Small letters (a, b, c...)
+ *    - Numbers (1, 2, 3...)
+ *    - Special characters (!@#$ etc.)
+ * 3. Common Mistakes: Does it avoid easy-to-guess patterns?
+ *    - No repeated characters (like 'aaa')
+ *    - No obvious sequences (like '123' or 'abc')
+ *    - No common words (like 'password' or 'admin')
+ */
+
+// This is the main program that runs our password checker
 public class Main {
+    /*
+     * This is where the program starts. It:
+     * 1. Creates a new password checker
+     * 2. Tests several different passwords
+     * 3. Shows how strong each password is
+     * 4. Suggests ways to make weak passwords stronger
+     */
     public static void main(String[] args) {
+        // Create our password checking tool
         PasswordAnalyzer analyzer = new PasswordAnalyzer();
         
+        // List of passwords we want to test
         String[] testPasswords = {
-            "password123",
-            "Cyb3rPunk#2077",
-            "abc123",
-            "StrongP@ssw0rd!",
-            "qwerty",
-            "H4ck3r_Pr0t0c0l"
+            "password123",      // A common, weak password
+            "Cyb3rPunk#2077",  // A strong password with mixed characters
+            "abc123",          // A simple, weak password
+            "StrongP@ssw0rd!", // A password that looks strong but uses common words
+            "qwerty",          // A very weak keyboard pattern password
+            "H4ck3r_Pr0t0c0l"  // A password using letter/number substitutions
         };
         
+        // Test each password and show the results
         for (String password : testPasswords) {
+            // Print a line to separate each password's results
             System.out.println("\nTesting password: " + password);
             System.out.println("----------------------------------------");
+            
+            // Check the password and get detailed feedback
             PasswordAnalyzer.AnalysisResult result = analyzer.analyzePassword(password);
+            
+            // Show the results (score, strength level, and suggestions)
             System.out.println(result);
         }
     }

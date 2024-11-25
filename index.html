@@ -406,9 +406,17 @@
           </form>
         </div>
       </section>
+      <!-- OSINT Aggregator Modal -->
+<div id="osintModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeOSINTModal()">×</button>
+    <iframe id="osintFrame" src=""></iframe>
+  </div>
+</div>
     </main>
 
     <script src="js/main.js"></script>
+    <script src="js/osint.js"></script>
     <script
       async="async"
       src="https://badgr.com/assets/widgets.bundle.js"

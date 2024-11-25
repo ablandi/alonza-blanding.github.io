@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetRunner Password Analyzer</title>
+    <style>
+        :root {
+            --neon-text-color: #f40;
+            --neon-border-color: #08f;
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1a1a1a;
+            --text-color: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            color: var(--neon-text-color);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px var(--neon-text-color);
+            animation: glitch 725ms infinite;
+        }
+
+        .analyzer-card {
+            background: var(--secondary-bg);
+            border: 1px solid var(--neon-border-color);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 20px rgba(0, 136, 255, 0.1);
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--neon-border-color);
+            color: var(--text-color);
+            font-family: inherit;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+        }
+
+        .strength-meter {
+            height: 10px;
+            background: #333;
+            border-radius: 5px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .strength-meter-fill {
+            height: 100%;
+            width: 0;
+            transition: width 0.3s ease, background-color 0.3s ease;
+        }
+
+        .criteria-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .criteria-item {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+        }
+
+        .criteria-icon {
+            margin-right: 1rem;
+            color: var(--neon-text-color);
+        }
+
+        .strength-label {
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 1rem 0;
+            text-transform: uppercase;
+            text-shadow: 0 0 5px currentColor;
+        }
+
+        .suggestions {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(255, 68, 0, 0.1);
+            border-left: 3px solid var(--neon-text-color);
+            border-radius: 4px;
+        }
+
+        .suggestions ul {
+            list-style: none;
+            margin: 0.5rem 0;
+        }
+
+        .suggestions li {
+            margin: 0.25rem 0;
+            padding-left: 1rem;
+            border-left: 2px solid var(--neon-text-color);
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                             0.025em 0.04em 0 #fffc00; }
+            15% { text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                              0.025em 0.04em 0 #fffc00; }
+            16% { text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+                              -0.05em -0.05em 0 #fffc00; }
+            49% { text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+                              -0.05em -0.05em 0 #fffc00; }
+            50% { text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+                              0 -0.04em 0 #fffc00; }
+            99% { text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+                              0 -0.04em 0 #fffc00; }
+            100% { text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
+                               -0.04em -0.025em 0 #fffc00; }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .title {
+                font-size: 2rem;
+            }
+
+            .analyzer-card {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">NetRunner Password Analyzer</h1>
+            <p>Evaluate your password security with advanced cybersecurity metrics</p>
+        </header>
+
+        <div class="analyzer-card">
+            <div class="input-group">
+                <input type="password" 
+                       id="passwordInput" 
+                       class="password-input" 
+                       placeholder="Enter password to analyze..."
+                       autocomplete="off">
+            </div>
+
+            <div class="strength-meter">
+                <div id="strengthMeterFill" class="strength-meter-fill"></div>
+            </div>
+
+            <div id="strengthLabel" class="strength-label">AWAITING INPUT</div>
+
+            <ul id="criteriaList" class="criteria-list">
+                <!-- Criteria will be added here by JavaScript -->
+            </ul>
+
+            <div id="suggestions" class="suggestions">
+                Enter a password to begin analysis...
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/password-analyzer.js"></script>
+    <script>
+        const passwordInput = document.getElementById('passwordInput');
+        const strengthMeterFill = document.getElementById('strengthMeterFill');
+        const strengthLabel = document.getElementById('strengthLabel');
+        const criteriaList = document.getElementById('criteriaList');
+        const suggestions = document.getElementById('suggestions');
+
+        const analyzer = new PasswordAnalyzer();
+        const strengthColors = {
+            'CRITICAL': '#ff0000',
+            'WEAK': '#ff4400',
+            'MODERATE': '#ffaa00',
+            'STRONG': '#00cc00',
+            'MAXIMUM_SECURITY': '#00ff00'
+        };
+
+        function updateUI(analysis) {
+            // Update strength meter
+            const score = analysis.score * 10; // Convert 0-10 score to percentage
+            strengthMeterFill.style.width = `${score}%`;
+            strengthMeterFill.style.backgroundColor = strengthColors[analysis.strength];
+            
+            // Update strength label
+            strengthLabel.textContent = analysis.strength.replace('_', ' ');
+            strengthLabel.style.color = strengthColors[analysis.strength];
+
+            // Update criteria list
+            criteriaList.innerHTML = '';
+            Object.entries(analysis.criteria).forEach(([criterion, met]) => {
+                const li = document.createElement('li');
+                li.className = 'criteria-item';
+                const formattedCriterion = criterion
+                    .replace(/([A-Z])/g, ' $1')
+                    .toLowerCase()
+                    .replace(/^./, str => str.toUpperCase());
+                li.innerHTML = `
+                    <span class="criteria-icon">${met ? '✓' : '✗'}</span>
+                    <span>${formattedCriterion}</span>
+                `;
+                criteriaList.appendChild(li);
+            });
+
+            // Update suggestions
+            if (analysis.suggestions && analysis.suggestions.length > 0) {
+                suggestions.innerHTML = '<ul>' + 
+                    analysis.suggestions.map(suggestion => `<li>${suggestion}</li>`).join('') +
+                    '</ul>';
+            } else {
+                suggestions.textContent = 'Password meets all criteria!';
+            }
+        }
+
+        let debounceTimeout;
+        passwordInput.addEventListener('input', (e) => {
+            clearTimeout(debounceTimeout);
+            if (e.target.value) {
+                debounceTimeout = setTimeout(() => {
+                    const analysis = analyzer.analyzePassword(e.target.value);
+                    updateUI(analysis);
+                }, 300);
+            } else {
+                strengthLabel.textContent = 'AWAITING INPUT';
+                strengthMeterFill.style.width = '0%';
+                criteriaList.innerHTML = '';
+                suggestions.textContent = 'Enter a password to begin analysis...';
+            }
+        });
+    </script>
+</body>
+</html>

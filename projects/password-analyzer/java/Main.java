@@ -1,30 +1,13 @@
-/*
- * Password Analyzer Program
- * 
- * Purpose: This program evaluates the strength of passwords and provides feedback on how to make them more secure.
- * It checks various security criteria like length, character types, and common patterns that might make a password weak.
- * 
- * How it works:
- * 1. User provides a password
- * 2. Program checks multiple security criteria
- * 3. Program calculates a strength score (0-10)
- * 4. Program provides feedback and suggestions for improvement
- */
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-class PasswordAnalyzer {  // Removed 'public' modifier
-    // These are the basic rules for passwords
+class PasswordAnalyzer {
     private static final int MIN_LENGTH = 8;
     private static final int MAX_LENGTH = 30;
     private static final String SPECIAL_CHARS = "!@#$%^&*(),.?\":{}|<>";
 
-    /*
-     * Password Strength Levels
-     */
-    enum StrengthLevel {  // Removed 'public' modifier
+    enum StrengthLevel {
         CRITICAL(0, 2, "Critical - Extremely vulnerable"),
         WEAK(3, 4, "Weak - Easy to crack"),
         MODERATE(5, 6, "Moderate - Average strength"),
@@ -55,17 +38,13 @@ class PasswordAnalyzer {  // Removed 'public' modifier
         }
     }
 
-    /*
-     * Password Analysis Result Class
-     */
-    static class AnalysisResult {  // Removed 'public' modifier
+    static class AnalysisResult {
         private final int score;
         private final StrengthLevel strength;
         private final List<String> metCriteria;
         private final List<String> suggestions;
 
-        public AnalysisResult(int score, StrengthLevel strength, 
-                            List<String> metCriteria, List<String> suggestions) {
+        public AnalysisResult(int score, StrengthLevel strength, List<String> metCriteria, List<String> suggestions) {
             this.score = score;
             this.strength = strength;
             this.metCriteria = metCriteria;
@@ -90,14 +69,10 @@ class PasswordAnalyzer {  // Removed 'public' modifier
                     sb.append("- ").append(suggestion).append("\n");
                 }
             }
-            
             return sb.toString();
         }
     }
 
-    /*
-     * Main Password Analysis Method
-     */
     public AnalysisResult analyzePassword(String password) {
         if (password == null || password.isEmpty()) {
             return new AnalysisResult(0, StrengthLevel.CRITICAL,
@@ -108,7 +83,6 @@ class PasswordAnalyzer {  // Removed 'public' modifier
         List<String> suggestions = new ArrayList<>();
         int score = 0;
 
-        // Check length
         if (password.length() >= MIN_LENGTH && password.length() <= MAX_LENGTH) {
             metCriteria.add("Length requirement met (" + MIN_LENGTH + "-" + MAX_LENGTH + " characters)");
             score += 2;
@@ -116,7 +90,6 @@ class PasswordAnalyzer {  // Removed 'public' modifier
             suggestions.add("Password should be between " + MIN_LENGTH + " and " + MAX_LENGTH + " characters");
         }
 
-        // Check for uppercase letters
         if (Pattern.compile("[A-Z]").matcher(password).find()) {
             metCriteria.add("Contains uppercase letters");
             score++;
@@ -124,7 +97,6 @@ class PasswordAnalyzer {  // Removed 'public' modifier
             suggestions.add("Add uppercase letters");
         }
 
-        // Check for lowercase letters
         if (Pattern.compile("[a-z]").matcher(password).find()) {
             metCriteria.add("Contains lowercase letters");
             score++;
@@ -132,7 +104,6 @@ class PasswordAnalyzer {  // Removed 'public' modifier
             suggestions.add("Add lowercase letters");
         }
 
-        // Check for numbers
         if (Pattern.compile("\\d").matcher(password).find()) {
             metCriteria.add("Contains numbers");
             score++;
@@ -140,7 +111,6 @@ class PasswordAnalyzer {  // Removed 'public' modifier
             suggestions.add("Add numbers");
         }
 
-        // Check for special characters
         if (Pattern.compile("[" + Pattern.quote(SPECIAL_CHARS) + "]").matcher(password).find()) {
             metCriteria.add("Contains special characters");
             score++;
@@ -148,7 +118,6 @@ class PasswordAnalyzer {  // Removed 'public' modifier
             suggestions.add("Add special characters");
         }
 
-        // Check for repeating characters
         if (!Pattern.compile("(.)\\1{2,}").matcher(password).find()) {
             metCriteria.add("No repeating characters");
             score++;
@@ -156,7 +125,6 @@ class PasswordAnalyzer {  // Removed 'public' modifier
             suggestions.add("Avoid repeating characters");
         }
 
-        // Check for sequential patterns
         if (!hasSequentialPatterns(password)) {
             metCriteria.add("No sequential patterns");
             score++;
@@ -164,7 +132,6 @@ class PasswordAnalyzer {  // Removed 'public' modifier
             suggestions.add("Avoid sequential patterns (e.g., abc, 123)");
         }
 
-        // Check for common patterns
         if (!hasCommonPatterns(password)) {
             metCriteria.add("No common patterns");
             score += 2;
@@ -205,12 +172,10 @@ class PasswordAnalyzer {  // Removed 'public' modifier
     }
 }
 
-// Main class for GDB online
 public class Main {
     public static void main(String[] args) {
         PasswordAnalyzer analyzer = new PasswordAnalyzer();
         
-        // Test some passwords
         String[] testPasswords = {
             "password123",
             "Cyb3rPunk#2077",

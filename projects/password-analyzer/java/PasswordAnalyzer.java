@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class PasswordAnalyzer {
+class PasswordAnalyzer {
     // These are the basic rules for passwords
     // MIN_LENGTH: Password must be at least this many characters
     // MAX_LENGTH: Password cannot be longer than this

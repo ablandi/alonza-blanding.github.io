@@ -1,8 +1,8 @@
+ /**
  * Password Analyzer Program
  * 
  * Purpose: This program evaluates the strength of passwords and provides feedback on how to make them more secure.
- * It checks /*
-various security criteria like length, character types, and common patterns that might make a password weak.
+ * It checks various security criteria like length, character types, and common patterns that might make a password weak.
  * 
  * How it works:
  * 1. User provides a password

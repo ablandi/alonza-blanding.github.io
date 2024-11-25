@@ -917,3 +917,90 @@ body {
     display: inline-block;
     transform: translateY(-1px);
 }
+
+/* OSINT Aggregator Launch Button */
+.launch-btn {
+    background: transparent;
+    border: 2px solid var(--neon-pink);
+    color: var(--neon-pink);
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.launch-btn:hover {
+    background: rgba(255, 42, 109, 0.1);
+    box-shadow: 0 0 15px var(--neon-pink);
+}
+
+.launch-btn::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid var(--neon-pink);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.launch-btn:hover::before {
+    opacity: 1;
+}
+
+/* OSINT Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    margin: 2% auto;
+    background: var(--darker-bg);
+    border: 2px solid var(--neon-pink);
+    box-shadow: 0 0 20px var(--neon-pink);
+    overflow: hidden;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: var(--neon-pink);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+}
+
+.modal-close:hover {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.modal iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}

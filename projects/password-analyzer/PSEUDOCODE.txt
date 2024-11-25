@@ -1,0 +1,184 @@
+PASSWORD ANALYZER PSEUDOCODE
+========================
+
+// Constants
+MIN_LENGTH = 8
+MAX_LENGTH = 30
+SPECIAL_CHARACTERS = "!@#$%^&*(),.?\":{}|<>"
+
+// Strength Level Definition
+ENUM StrengthLevel:
+    CRITICAL     (0-2,  "Critical - Extremely vulnerable")
+    WEAK        (3-4,  "Weak - Easy to crack")
+    MODERATE    (5-6,  "Moderate - Average strength")
+    STRONG      (7-8,  "Strong - Good protection")
+    MAX_SECURITY(9-10, "Maximum Security - Excellent protection")
+
+// Main Analysis Function
+FUNCTION analyzePassword(password):
+    IF password is empty OR null THEN
+        RETURN new AnalysisResult(
+            score = 0,
+            strength = CRITICAL,
+            metCriteria = [],
+            suggestions = ["Password cannot be empty"]
+        )
+    END IF
+
+    score = 0
+    metCriteria = empty list
+    suggestions = empty list
+
+    // Check 1: Length
+    IF password.length is between MIN_LENGTH and MAX_LENGTH THEN
+        ADD TO metCriteria "Length requirement met"
+        score += 2
+    ELSE
+        ADD TO suggestions "Password should be between 8 and 30 characters"
+    END IF
+
+    // Check 2: Uppercase Letters
+    IF password contains uppercase letters THEN
+        ADD TO metCriteria "Contains uppercase letters"
+        score += 1
+    ELSE
+        ADD TO suggestions "Add uppercase letters"
+    END IF
+
+    // Check 3: Lowercase Letters
+    IF password contains lowercase letters THEN
+        ADD TO metCriteria "Contains lowercase letters"
+        score += 1
+    ELSE
+        ADD TO suggestions "Add lowercase letters"
+    END IF
+
+    // Check 4: Numbers
+    IF password contains numbers THEN
+        ADD TO metCriteria "Contains numbers"
+        score += 1
+    ELSE
+        ADD TO suggestions "Add numbers"
+    END IF
+
+    // Check 5: Special Characters
+    IF password contains any character from SPECIAL_CHARACTERS THEN
+        ADD TO metCriteria "Contains special characters"
+        score += 1
+    ELSE
+        ADD TO suggestions "Add special characters"
+    END IF
+
+    // Check 6: Repeating Characters
+    IF password does NOT contain 3 or more repeated characters THEN
+        ADD TO metCriteria "No repeating characters"
+        score += 1
+    ELSE
+        ADD TO suggestions "Avoid repeating characters"
+    END IF
+
+    // Check 7: Sequential Patterns
+    IF NOT hasSequentialPatterns(password) THEN
+        ADD TO metCriteria "No sequential patterns"
+        score += 1
+    ELSE
+        ADD TO suggestions "Avoid sequential patterns (e.g., abc, 123)"
+    END IF
+
+    // Check 8: Common Patterns
+    IF NOT hasCommonPatterns(password) THEN
+        ADD TO metCriteria "No common patterns"
+        score += 2
+    ELSE
+        ADD TO suggestions "Avoid common patterns and dictionary words"
+    END IF
+
+    strengthLevel = getStrengthLevel(score)
+    RETURN new AnalysisResult(score, strengthLevel, metCriteria, suggestions)
+END FUNCTION
+
+// Helper Functions
+FUNCTION hasSequentialPatterns(password):
+    lowerPassword = convert password to lowercase
+    sequences = "abcdefghijklmnopqrstuvwxyz0123456789"
+    
+    FOR each 3-character sequence in sequences:
+        forward = current sequence
+        reverse = reverse of current sequence
+        IF lowerPassword contains forward OR reverse THEN
+            RETURN true
+        END IF
+    END FOR
+    
+    RETURN false
+END FUNCTION
+
+FUNCTION hasCommonPatterns(password):
+    lowerPassword = convert password to lowercase
+    commonPatterns = [
+        "password", "123456", "qwerty", "admin", "letmein",
+        "welcome", "monkey", "dragon", "master", "hello"
+    ]
+    
+    FOR each pattern in commonPatterns:
+        IF lowerPassword contains pattern THEN
+            RETURN true
+        END IF
+    END FOR
+    
+    RETURN false
+END FUNCTION
+
+FUNCTION getStrengthLevel(score):
+    FOR each level in StrengthLevel:
+        IF score is within level's range THEN
+            RETURN level
+        END IF
+    END FOR
+    RETURN CRITICAL
+END FUNCTION
+
+// Result Structure
+CLASS AnalysisResult:
+    PROPERTIES:
+        score: integer
+        strength: StrengthLevel
+        metCriteria: list of strings
+        suggestions: list of strings
+
+    METHOD toString():
+        OUTPUT "Password Analysis Result:"
+        OUTPUT "Score: " + score + "/10"
+        OUTPUT "Strength: " + strength.description
+        
+        OUTPUT "Met Criteria:"
+        FOR each criterion in metCriteria:
+            OUTPUT "✓ " + criterion
+        END FOR
+        
+        IF suggestions is not empty THEN
+            OUTPUT "Suggestions for improvement:"
+            FOR each suggestion in suggestions:
+                OUTPUT "- " + suggestion
+            END FOR
+        END IF
+END CLASS
+
+// Example Usage
+MAIN PROGRAM:
+    analyzer = new PasswordAnalyzer()
+    testPasswords = [
+        "password123",
+        "Cyb3rPunk#2077",
+        "abc123",
+        "StrongP@ssw0rd!",
+        "qwerty",
+        "H4ck3r_Pr0t0c0l"
+    ]
+    
+    FOR each password in testPasswords:
+        OUTPUT "Testing password: " + password
+        result = analyzer.analyzePassword(password)
+        OUTPUT result.toString()
+    END FOR
+END PROGRAM

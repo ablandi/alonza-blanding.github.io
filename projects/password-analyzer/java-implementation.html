@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Password Analyzer - NetRunner Portfolio</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .code-container {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #0ff;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        
+        pre {
+            color: #0ff;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        .implementation-section {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-left: 4px solid #0ff;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: #0ff;
+        }
+
+        .strength-level {
+            display: inline-block;
+            padding: 5px 15px;
+            margin: 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .critical { background: #ff0000; color: white; }
+        .weak { background: #ff6600; color: white; }
+        .moderate { background: #ffcc00; color: black; }
+        .strong { background: #00cc00; color: white; }
+        .maximum { background: #00ff00; color: black; }
+
+        .download-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #0ff;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #00cccc;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="glitch" data-text="JAVA PASSWORD ANALYZER">JAVA PASSWORD ANALYZER</span></h1>
+            <p class="subtitle">A Cybersecurity Implementation in Java</p>
+        </header>
+
+        <main>
+            <section class="implementation-section">
+                <h2>Implementation Overview</h2>
+                <p>This Java implementation of the Password Analyzer demonstrates advanced password strength evaluation using object-oriented programming principles and robust pattern detection algorithms.</p>
+                
+                <h3>Key Features</h3>
+                <ul class="feature-list">
+                    <li>Comprehensive strength analysis</li>
+                    <li>Pattern detection (sequential, common, repeating)</li>
+                    <li>Detailed feedback and suggestions</li>
+                    <li>Object-oriented design</li>
+                    <li>Command-line interface</li>
+                </ul>
+            </section>
+
+            <section class="implementation-section">
+                <h2>Strength Levels</h2>
+                <div>
+                    <span class="strength-level critical">CRITICAL (0-2)</span>
+                    <span class="strength-level weak">WEAK (3-4)</span>
+                    <span class="strength-level moderate">MODERATE (5-6)</span>
+                    <span class="strength-level strong">STRONG (7-8)</span>
+                    <span class="strength-level maximum">MAXIMUM (9-10)</span>
+                </div>
+            </section>
+
+            <section class="implementation-section">
+                <h2>Code Structure</h2>
+                <div class="code-container">
+                    <pre>
+class PasswordAnalyzer {
+    // Core analysis method
+    public AnalysisResult analyzePassword(String password) {
+        // Validate input
+        // Check criteria
+        // Calculate score
+        // Generate feedback
+        return new AnalysisResult(score, strength, criteria, suggestions);
+    }
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section class="implementation-section">
+                <h2>Project Files</h2>
+                <ul class="feature-list">
+                    <li><a href="java/PasswordAnalyzer.java">PasswordAnalyzer.java</a> - Main implementation</li>
+                    <li><a href="PSEUDOCODE.txt">PSEUDOCODE.txt</a> - Algorithm explanation</li>
+                    <li><a href="DOCUMENTATION.md">DOCUMENTATION.md</a> - Project documentation</li>
+                </ul>
+            </section>
+
+            <section class="implementation-section">
+                <h2>Usage Example</h2>
+                <div class="code-container">
+                    <pre>
+PasswordAnalyzer analyzer = new PasswordAnalyzer();
+AnalysisResult result = analyzer.analyzePassword("Cyb3rPunk#2077");
+System.out.println(result);
+
+// Output:
+// Password Analysis Result:
+// Score: 10/10
+// Strength: Maximum Security - Excellent protection
+// ✓ Length requirement met (8-30 characters)
+// ✓ Contains uppercase letters
+// ✓ Contains lowercase letters
+// ✓ Contains numbers
+// ✓ Contains special characters
+// ✓ No repeating characters
+// ✓ No sequential patterns
+// ✓ No common patterns</pre>
+                </div>
+            </section>
+
+            <a href="java/PasswordAnalyzer.java" download class="download-btn">Download Source Code</a>
+        </main>
+
+        <footer>
+            <p>Part of the NetRunner Cybersecurity Portfolio</p>
+            <a href="../../index.html" class="download-btn">Back to Portfolio</a>
+        </footer>
+    </div>
+</body>
+</html>

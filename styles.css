@@ -1004,3 +1004,37 @@ body {
     height: 100%;
     border: none;
 }
+
+/* Dashboard Modal Styles */
+.dashboard-modal {
+  width: 90vw;
+  height: 90vh;
+  max-width: 1400px;
+  background-color: var(--darker-bg);
+  border: 2px solid var(--neon-blue);
+  box-shadow: 0 0 20px rgba(0, 255, 249, 0.5);
+}
+
+.dashboard-modal iframe {
+  width: 100%;
+  height: calc(100% - 40px);
+  border: none;
+  background-color: var(--darker-bg);
+}
+
+.dashboard-modal .modal-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none;
+  border: none;
+  color: var(--neon-blue);
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.dashboard-modal .modal-close:hover {
+  color: var(--neon-pink);
+  text-shadow: 0 0 10px var(--neon-pink);
+}

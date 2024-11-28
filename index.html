@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cyberpunk Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/terminal.css">
+    <link rel="stylesheet" href="css/demo-terminal.css">
   </head>
   <body>
     <div id="background-overlay"></div>
@@ -426,6 +428,15 @@
           </form>
         </div>
       </section>
+      <div class="main-content">
+        <div id="terminal" class="terminal"></div>
+        
+        <div class="demo-grid">
+            <div id="digital-evidence-demo" class="demo-terminal" data-project="digital-evidence"></div>
+            <div id="parental-monitor-demo" class="demo-terminal" data-project="parental-monitor"></div>
+            <div id="netrunner-demo" class="demo-terminal" data-project="netrunner-analyzer"></div>
+        </div>
+      </div>
       <!-- OSINT Aggregator Modal -->
 <div id="osintModal" class="modal">
   <div class="modal-content">
@@ -449,5 +460,7 @@
       src="https://badgr.com/assets/widgets.bundle.js"
     ></script>
     <script src="js/dashboard.js"></script>
+    <script src="js/terminal.js"></script>
+    <script src="js/demo-terminal.js"></script>
   </body>
 </html>

@@ -166,15 +166,15 @@ class HackerTerminal {
             <div class="contact-info">
                 <div class="contact-item">
                     <span class="icon">📧</span>
-                    <a href="mailto:your.email@example.com">your.email@example.com</a>
+                    <a href="mailto:ablandingjr@outlook.com">ablandingjr@outlook.com</a>
                 </div>
                 <div class="contact-item">
                     <span class="icon">💼</span>
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/alonzajr-124876118" target="_blank">LinkedIn</a>
                 </div>
                 <div class="contact-item">
                     <span class="icon">💻</span>
-                    <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                    <a href="https://github.com/ablandi/alonza-blanding.github.io" target="_blank">GitHub</a>
                 </div>
             </div>
         `);

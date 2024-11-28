@@ -1,0 +1,204 @@
+.capabilities-section {
+    padding: 4rem 2rem;
+    background: var(--background-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.capabilities-title {
+    font-size: 3.5rem;
+    text-align: center;
+    color: #ff1493;
+    text-shadow: 0 0 10px #ff1493,
+                 0 0 20px #ff1493,
+                 0 0 30px #ff1493;
+    margin-bottom: 4rem;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    animation: titlePulse 4s infinite;
+}
+
+@keyframes titlePulse {
+    0%, 100% {
+        text-shadow: 0 0 10px #ff1493,
+                    0 0 20px #ff1493,
+                    0 0 30px #ff1493;
+    }
+    50% {
+        text-shadow: 0 0 15px #ff1493,
+                    0 0 25px #ff1493,
+                    0 0 35px #ff1493;
+    }
+}
+
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.capability-card {
+    background: rgba(18, 18, 18, 0.8);
+    border: 1px solid #8a2be2;
+    border-radius: 10px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.capability-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8a2be2, transparent);
+    animation: borderFlow 2s linear infinite;
+}
+
+@keyframes borderFlow {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.capability-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(138, 43, 226, 0.3);
+}
+
+.capability-title {
+    color: #8a2be2;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.capability-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.capability-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(138, 43, 226, 0.1);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.capability-item:hover {
+    background: rgba(138, 43, 226, 0.2);
+    transform: translateX(10px);
+}
+
+.capability-icon {
+    color: #00ffff;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.capability-text {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    font-family: 'Fira Code', monospace;
+}
+
+/* Hexagon Grid Background */
+.hex-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.1;
+    pointer-events: none;
+    background-image: 
+        linear-gradient(60deg, #8a2be2 1px, transparent 1px),
+        linear-gradient(-60deg, #8a2be2 1px, transparent 1px);
+    background-size: 40px 70px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .capabilities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .capabilities-title {
+        font-size: 2.5rem;
+    }
+
+    .capability-title {
+        font-size: 1.5rem;
+    }
+
+    .capability-item {
+        padding: 0.8rem;
+    }
+
+    .capability-text {
+        font-size: 1rem;
+    }
+}
+
+/* Glitch Effect */
+.glitch-effect {
+    position: relative;
+}
+
+.glitch-effect::before,
+.glitch-effect::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-effect::before {
+    left: 2px;
+    text-shadow: -2px 0 #00ffff;
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+.glitch-effect::after {
+    left: -2px;
+    text-shadow: -2px 0 #ff1493;
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(19px, 9999px, 32px, 0);
+    }
+    100% {
+        clip: rect(83px, 9999px, 98px, 0);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0% {
+        clip: rect(65px, 9999px, 119px, 0);
+    }
+    100% {
+        clip: rect(12px, 9999px, 45px, 0);
+    }
+}

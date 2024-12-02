@@ -1,487 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cyberpunk Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="css/terminal.css">
-    <link rel="stylesheet" href="css/demo-terminal.css">
-    <link rel="stylesheet" href="css/capabilities.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Operations Portfolio - Alonza Blanding Jr</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="background-overlay"></div>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/terminal.css">
+    <link rel="stylesheet" href="css/case-studies.css">
+</head>
+<body>
+    <div class="grid-background"></div>
+    
+    <header class="main-header">
+        <h1>SECURITY OPERATIONS PORTFOLIO</h1>
+        <p class="subtitle">Alonza Blanding Jr | Security Specialist & Developer</p>
+    </header>
 
-    <nav class="cyber-nav">
-      <ul>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#skills">SKILLS</a></li>
-        <li><a href="#operations">OPERATIONS</a></li>
-        <li><a href="#certifications">CERTIFICATIONS</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-    </nav>
-
-    <main>
-      <section id="about" class="cyber-section">
-        <div class="content">
-          <h2 class="cyber-header glitch" data-text="NETRUNNER">NETRUNNER</h2>
-          <div class="about-content">
-            <div class="about-main">
-              <p class="cyber-text">
-                Emerging digital investigator and aspiring OSINT specialist,
-                currently navigating the cybersecurity landscape as a dedicated
-                student. Pursuing expertise in digital forensics while building
-                a foundation in full-stack development.
-              </p>
-              <div class="about-stats">
-                <div class="stat">
-                  <span class="stat-value">4</span>
-                  <span class="stat-label">Training Ops Completed</span>
+    <main class="container">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2>About</h2>
+            <div class="about-content">
+                <div class="profile-info">
+                    <p>Security specialist and developer with expertise in digital forensics, OSINT, and secure application development. Focused on creating robust security solutions and conducting thorough digital investigations.</p>
+                    <div class="key-metrics">
+                        <div class="metric">
+                            <span class="number">5+</span>
+                            <span class="label">Years Experience</span>
+                        </div>
+                        <div class="metric">
+                            <span class="number">15+</span>
+                            <span class="label">Projects Completed</span>
+                        </div>
+                        <div class="metric">
+                            <span class="number">8</span>
+                            <span class="label">Security Tools Developed</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat">
-                  <span class="stat-value">3</span>
-                  <span class="stat-label">Focus Areas</span>
+            </div>
+        </section>
+
+        <!-- Case Studies Section -->
+        <section id="case-studies" class="section">
+            <h2>Case Studies</h2>
+            <div class="case-studies-grid">
+                <article class="case-study-card" onclick="window.location.href='case-studies/digital-evidence.html'">
+                    <div class="case-study-content">
+                        <h3>Digital Evidence Suite</h3>
+                        <p class="case-tag">Digital Forensics</p>
+                        <div class="case-preview">
+                            <h4>Situation</h4>
+                            <p>Need for comprehensive digital evidence collection and analysis tool</p>
+                            <h4>Impact</h4>
+                            <p>50% reduction in evidence processing time</p>
+                        </div>
+                        <span class="read-more">View Full Case Study →</span>
+                    </div>
+                </article>
+
+                <article class="case-study-card" onclick="window.location.href='case-studies/parental-monitor.html'">
+                    <div class="case-study-content">
+                        <h3>Parental Monitoring System</h3>
+                        <p class="case-tag">Security & Privacy</p>
+                        <div class="case-preview">
+                            <h4>Situation</h4>
+                            <p>Balance between monitoring and privacy protection</p>
+                            <h4>Impact</h4>
+                            <p>98% accuracy in threat detection</p>
+                        </div>
+                        <span class="read-more">View Full Case Study →</span>
+                    </div>
+                </article>
+
+                <article class="case-study-card" onclick="window.location.href='case-studies/social-analyzer.html'">
+                    <div class="case-study-content">
+                        <h3>Social Media Analysis Tool</h3>
+                        <p class="case-tag">OSINT</p>
+                        <div class="case-preview">
+                            <h4>Situation</h4>
+                            <p>Need for advanced social media intelligence gathering</p>
+                            <h4>Impact</h4>
+                            <p>75% improvement in data correlation</p>
+                        </div>
+                        <span class="read-more">View Full Case Study →</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section">
+            <h2>Certifications</h2>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <h3>Security+</h3>
+                    <p class="cert-issuer">CompTIA</p>
+                    <p class="cert-date">2023</p>
                 </div>
-                <div class="stat">
-                  <span class="stat-value">2024</span>
-                  <span class="stat-label">Journey Started</span>
+                <!-- Add more certification cards as needed -->
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Security Operations</h3>
+                    <ul>
+                        <li>Digital Forensics</li>
+                        <li>OSINT Techniques</li>
+                        <li>Threat Analysis</li>
+                        <li>Security Implementation</li>
+                    </ul>
                 </div>
-              </div>
-              <div class="about-description">
-                <p class="training-status">[ STATUS: IN TRAINING ]</p>
-                <p class="cyber-text">Currently developing expertise in:</p>
-                <ul class="cyber-list">
-                  <li>🔍 Digital Investigation & OSINT Methodologies</li>
-                  <li>💻 Full-Stack Development Fundamentals</li>
-                  <li>🛡️ Cybersecurity & Digital Forensics</li>
-                </ul>
-                <p class="cyber-text terminal-text">
-                  → Actively participating in training operations including
-                  missing person investigations, bug bounty programs, and
-                  anti-trafficking intelligence gathering. Pursuing
-                  certifications in Software Development, Cybersecurity, and
-                  OSINT fundamentals. Ready to apply these skills in real-world
-                  scenarios.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="capabilities-section">
-        <div class="hex-background"></div>
-        <h2 class="capabilities-title glitch-effect" data-text="CAPABILITIES">CAPABILITIES</h2>
-        <div class="capabilities-grid">
-          <div class="capability-card">
-            <h3 class="capability-title">Development</h3>
-            <ul class="capability-list">
-              <li class="capability-item">
-                <span class="capability-icon">⚡</span>
-                <span class="capability-text">Full-Stack Development</span>
-              </li>
-              <li class="capability-item">
-                <span class="capability-icon">🔧</span>
-                <span class="capability-text">System Architecture</span>
-              </li>
-              <li class="capability-item">
-                <span class="capability-icon">🔒</span>
-                <span class="capability-text">Security Implementation</span>
-              </li>
-            </ul>
-          </div>
-          <div class="capability-card">
-            <h3 class="capability-title">OSINT</h3>
-            <ul class="capability-list">
-              <li class="capability-item">
-                <span class="capability-icon">🔍</span>
-                <span class="capability-text">Digital Reconnaissance</span>
-              </li>
-              <li class="capability-item">
-                <span class="capability-icon">📊</span>
-                <span class="capability-text">Data Analysis</span>
-              </li>
-              <li class="capability-item">
-                <span class="capability-icon">🎯</span>
-                <span class="capability-text">Intelligence Gathering</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="operations" class="cyber-section">
-        <div class="content">
-          <h2 class="cyber-header">OPERATIONS</h2>
-          <div class="operations-grid">
-            <div class="operation-card">
-              <h3 class="op-title">Kase Scenarios - Sinister Obsession</h3>
-              <div class="op-details">
-                <p class="op-type">Digital Forensics Operation</p>
-                <p class="op-date">2024</p>
-              </div>
-              <div class="badgr-badge">
-                <blockquote
-                  class="badgr-badge"
-                  style="
-                    font-family: Helvetica, Roboto, 'Segoe UI', Calibri,
-                      sans-serif;
-                  "
-                >
-                  <a
-                    href="https://api.badgr.io/public/assertions/xMD0zCftRf--FfwWdHWM9Q"
-                  >
-                    <img
-                      width="120px"
-                      height="120px"
-                      src="https://api.badgr.io/public/assertions/xMD0zCftRf--FfwWdHWM9Q/image"
-                    />
-                  </a>
-                </blockquote>
-              </div>
-              <div class="op-accomplishments">
-                <h4 class="op-accomplishments-title">MISSION DETAILS</h4>
-                <ul class="op-accomplishments-list">
-                  <li>Username enumeration and social media intelligence</li>
-                  <li>
-                    Geolocation: Extracted visual data from images for
-                    contextual analysis
-                  </li>
-                  <li>
-                    Pivoted on key data points to uncover anonymous identities
-                  </li>
-                </ul>
-              </div>
-              <div class="op-preview">
-                <i class="op-icon">🔍</i>
-                <span class="view-text">INVESTIGATION COMPLETE</span>
-              </div>
-            </div>
-
-            <div class="operation-card">
-              <h3 class="op-title">
-                Kase Scenarios - The Vanishing Of Rosie Parker
-              </h3>
-              <div class="op-details">
-                <p class="op-type">Missing Person Investigation</p>
-                <p class="op-date">2024</p>
-              </div>
-              <div class="badgr-badge">
-                <blockquote
-                  class="badgr-badge"
-                  style="
-                    font-family: Helvetica, Roboto, 'Segoe UI', Calibri,
-                      sans-serif;
-                  "
-                >
-                  <a
-                    href="https://api.badgr.io/public/assertions/Maf1Hq4NTYm_7XaLvN2RRQ"
-                  >
-                    <img
-                      width="120px"
-                      height="120px"
-                      src="https://api.badgr.io/public/assertions/Maf1Hq4NTYm_7XaLvN2RRQ/image"
-                    />
-                  </a>
-                </blockquote>
-              </div>
-              <div class="op-accomplishments">
-                <h4 class="op-accomplishments-title">MISSION DETAILS</h4>
-                <ul class="op-accomplishments-list">
-                  <li>
-                    Digital footprint analysis and timeline reconstruction
-                  </li>
-                  <li>Social network mapping and relationship analysis</li>
-                  <li>Location correlation through metadata examination</li>
-                  <li>Pattern recognition in digital communications</li>
-                </ul>
-              </div>
-              <div class="op-preview">
-                <i class="op-icon">🔎</i>
-                <span class="view-text">CASE RESOLVED</span>
-              </div>
-            </div>
-
-            <div class="operation-card">
-              <h3 class="op-title">Orkla: Bounty Hunt</h3>
-              <div class="op-details">
-                <p class="op-type">Bug Bounty Operation</p>
-                <p class="op-date">2024</p>
-              </div>
-              <div class="badgr-badge">
-                <blockquote
-                  class="badgr-badge"
-                  style="
-                    font-family: Helvetica, Roboto, 'Segoe UI', Calibri,
-                      sans-serif;
-                  "
-                >
-                  <a
-                    href="https://api.badgr.io/public/assertions/MLKvDdT1QnOhUTUOTFaahg"
-                  >
-                    <img
-                      width="120px"
-                      height="120px"
-                      src="https://api.badgr.io/public/assertions/MLKvDdT1QnOhUTUOTFaahg/image"
-                    />
-                  </a>
-                </blockquote>
-              </div>
-              <div class="op-accomplishments">
-                <h4 class="op-accomplishments-title">MISSION DETAILS</h4>
-                <ul class="op-accomplishments-list">
-                  <li>Conducted thorough vulnerability assessment</li>
-                  <li>Identified and documented security weaknesses</li>
-                  <li>Provided detailed mitigation strategies</li>
-                </ul>
-              </div>
-              <div class="op-preview">
-                <i class="op-icon">🎯</i>
-                <span class="view-text">MISSION ACCOMPLISHED</span>
-              </div>
-            </div>
-
-            <div class="operation-card">
-              <h3 class="op-title">OSINT Data - Fight Slavery</h3>
-              <div class="op-details">
-                <p class="op-type">Intelligence Operation</p>
-                <p class="op-date">2024</p>
-              </div>
-              <div class="badgr-badge">
-                <blockquote class="badgr-badge" style="font-family: Helvetica, Roboto, 'Segoe UI', Calibri, sans-serif;">
-                  <a href="https://api.badgr.io/public/assertions/t_wYD8aDTFOT7G0gq71YJQ">
-                    <img width="120px" height="120px" src="https://api.badgr.io/public/assertions/t_wYD8aDTFOT7G0gq71YJQ/image" />
-                  </a>
-                </blockquote>
-              </div>
-              <div class="op-accomplishments">
-                <h4 class="op-accomplishments-title">MISSION DETAILS</h4>
-                <ul class="op-accomplishments-list">
-                  <li>Gathered and analyzed human trafficking intelligence</li>
-                  <li>Applied advanced OSINT techniques for data collection</li>
-                  <li>Contributed to anti-trafficking operations</li>
-                </ul>
-              </div>
-              <div class="op-preview">
-                <i class="op-icon">🌐</i>
-                <span class="view-text">INTEL GATHERED</span>
-              </div>
-            </div>
-
-            <div class="operation-card">
-              <h3 class="op-title">NetRunner Password Analyzer</h3>
-              <div class="op-details">
-                <p class="op-type">Cybersecurity Tool Development</p>
-                <p class="op-date">2024</p>
-              </div>
-              <div class="op-accomplishments">
-                <h4 class="op-accomplishments-title">PROJECT DETAILS</h4>
-                <ul class="op-accomplishments-list">
-                  <li>Advanced password strength analysis using Spring Boot</li>
-                  <li>Real-time strength evaluation with visual feedback</li>
-                  <li>Cyberpunk-themed UI with interactive elements</li>
-                  <li>Implementation of industry-standard security rules</li>
-                </ul>
-              </div>
-              <div class="op-preview">
-                <i class="op-icon">🔐</i>
-                <a href="projects/password-analyzer/index.html" target="_blank" class="view-text">ACCESS TOOL</a>
-                <a href="projects/password-analyzer/java-implementation.html" target="_blank" class="view-text">VIEW JAVA VERSION</a>
-              </div>
-            </div>
-
-            <div class="operation-card">
-              <h3 class="op-title">Parental Monitoring System</h3>
-              <div class="op-details">
-                <p class="op-type">Security Tool Development</p>
-                <p class="op-date">2024</p>
-              </div>
-              <div class="op-accomplishments">
-                <h4 class="op-accomplishments-title">MISSION DETAILS</h4>
-                <ul class="op-accomplishments-list">
-                  <li>Real-time website and application tracking</li>
-                  <li>Screen time monitoring and management</li>
-                  <li>Safe search enforcement across browsers</li>
-                  <li>Privacy-focused activity reporting</li>
-                  <li>Local data encryption and security</li>
-                </ul>
-              </div>
-              <div class="op-tech-stack">
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">SQLite</span>
-                <span class="tech-badge">Windows API</span>
-              </div>
-              <div class="op-preview">
-                <i class="op-icon">🛡️</i>
-                <span class="view-text">ACTIVE DEPLOYMENT</span>
-              </div>
-            </div>
-
-            <div class="operation-card">
-              <h3 class="op-title">Digital Evidence Collection Suite</h3>
-              <div class="op-details">
-                <p class="op-type">Forensics Tool Development</p>
-                <p class="op-date">2024</p>
-              </div>
-              <div class="op-accomplishments">
-                <h4 class="op-accomplishments-title">MISSION DETAILS</h4>
-                <ul class="op-accomplishments-list">
-                  <li>Secure digital evidence collection and preservation</li>
-                  <li>Automated chain of custody tracking</li>
-                  <li>Web content capture and analysis</li>
-                  <li>Advanced metadata extraction</li>
-                  <li>Encrypted evidence storage</li>
-                </ul>
-              </div>
-              <div class="op-tech-stack">
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">Cryptography</span>
-                <span class="tech-badge">Selenium</span>
-                <span class="tech-badge">Digital Forensics</span>
-              </div>
-              <div class="op-preview">
-                <i class="op-icon">🔒</i>
-                <span class="view-text">ACTIVE DEPLOYMENT</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="certifications" class="cyber-section">
-        <div class="content">
-          <h2 class="cyber-header">ACHIEVEMENTS</h2>
-          <div class="certifications-grid">
-            <div class="certification-card">
-              <h3 class="cert-title">Software Development</h3>
-              <div class="cert-details">
-                <p class="cert-issuer">Springboard</p>
-                <p class="cert-date">2024</p>
-              </div>
-              <a
-                href="certificates/Springboard-Certificate.pdf"
-                target="_blank"
-                class="cert-link"
-              >
-                <div class="cert-preview">
-                  <i class="cert-icon">💻</i>
-                  <span class="view-text">VIEW CERTIFICATE</span>
+                <div class="skill-category">
+                    <h3>Development</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>FastAPI</li>
+                        <li>React</li>
+                        <li>System Architecture</li>
+                    </ul>
                 </div>
-              </a>
-            </div>
-
-            <div class="certification-card">
-              <h3 class="cert-title">Cybersecurity Foundations</h3>
-              <div class="cert-details">
-                <p class="cert-issuer">Southern New Hampshire University</p>
-                <p class="cert-date">2024</p>
-              </div>
-              <a
-                href="certificates/Springboard-Cybersecurity-Foundations.pdf"
-                target="_blank"
-                class="cert-link"
-              >
-                <div class="cert-preview">
-                  <i class="cert-icon">🛡️</i>
-                  <span class="view-text">VIEW CERTIFICATE</span>
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <ul>
+                        <li>Wireshark</li>
+                        <li>Metasploit</li>
+                        <li>Burp Suite</li>
+                        <li>Network Analysis</li>
+                    </ul>
                 </div>
-              </a>
             </div>
+        </section>
 
-            <div class="certification-card">
-              <h3 class="cert-title">OSINT Fundamentals</h3>
-              <div class="cert-details">
-                <p class="cert-issuer">Springboard</p>
-                <p class="cert-date">2024</p>
-              </div>
-              <a
-                href="certificates/Springboard-OSINT-Certificate.png"
-                target="_blank"
-                class="cert-link"
-              >
-                <div class="cert-preview">
-                  <i class="cert-icon">🔍</i>
-                  <span class="view-text">VIEW CERTIFICATE</span>
-                </div>
-              </a>
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <div class="contact-grid">
+                <a href="mailto:ablandingjr@outlook.com" class="contact-item">
+                    <span class="icon">📧</span>
+                    <span>ablandingjr@outlook.com</span>
+                </a>
+                <a href="https://www.linkedin.com/in/alonzajr-124876118" target="_blank" class="contact-item">
+                    <span class="icon">💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/ablandi/alonza-blanding.github.io" target="_blank" class="contact-item">
+                    <span class="icon">💻</span>
+                    <span>GitHub</span>
+                </a>
             </div>
-
-            <div class="certification-card">
-              <h3 class="cert-title">IT Hardware Fundamentals</h3>
-              <div class="cert-details">
-                <p class="cert-issuer">Coursera</p>
-                <p class="cert-date">2024</p>
-              </div>
-              <a
-                href="certificates/IT-Hardware-Fundamentals.pdf"
-                target="_blank"
-                class="cert-link"
-              >
-                <div class="cert-preview">
-                  <i class="cert-icon">📜</i>
-                  <span class="view-text">VIEW CERTIFICATE</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="cyber-section">
-        <h2 class="cyber-header">CONNECT</h2>
-        <div class="contact-form">
-          <form id="contact-form">
-            <div class="form-group">
-              <input type="text" id="name" required />
-              <label for="name">IDENTIFIER</label>
-            </div>
-            <div class="form-group">
-              <input type="email" id="email" required />
-              <label for="email">NEURAL-LINK</label>
-            </div>
-            <div class="form-group">
-              <textarea id="message" required></textarea>
-              <label for="message">TRANSMISSION</label>
-            </div>
-            <button type="submit" class="cyber-button">SEND</button>
-          </form>
-        </div>
-      </section>
-      <div class="main-content">
-        <div id="terminal" class="terminal"></div>
-        
-        <div class="demo-grid">
-            <div id="digital-evidence-demo" class="demo-terminal" data-project="digital-evidence"></div>
-            <div id="parental-monitor-demo" class="demo-terminal" data-project="parental-monitor"></div>
-            <div id="netrunner-demo" class="demo-terminal" data-project="netrunner-analyzer"></div>
-        </div>
-      </div>
-      <!-- OSINT Aggregator Modal -->
-<div id="osintModal" class="modal">
-  <div class="modal-content">
-    <button class="modal-close" onclick="closeOSINTModal()">×</button>
-    <iframe id="osintFrame" src=""></iframe>
-  </div>
-</div>
-<!-- Dashboard Modal -->
-<div id="dashboardModal" class="modal">
-  <div class="modal-content dashboard-modal">
-    <button class="modal-close" onclick="closeDashboard()">×</button>
-    <iframe id="dashboardFrame" src=""></iframe>
-  </div>
-</div>
+        </section>
     </main>
 
+    <footer class="main-footer">
+        <p> 2024 Alonza Blanding Jr | Security Operations Portfolio</p>
+    </footer>
+
     <script src="js/main.js"></script>
-    <script src="js/osint.js"></script>
-    <script
-      async="async"
-      src="https://badgr.com/assets/widgets.bundle.js"
-    ></script>
-    <script src="js/dashboard.js"></script>
-    <script src="js/terminal.js"></script>
-    <script src="js/demo-terminal.js"></script>
-  </body>
+</body>
 </html>

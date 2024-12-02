@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Analysis Tool Case Study - Security Operations Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+    <div class="grid-background"></div>
+    
+    <header class="main-header">
+        <nav class="back-nav">
+            <a href="../index.html">← Back to Portfolio</a>
+        </nav>
+        <h1>Social Media Analysis Tool</h1>
+        <p class="subtitle">Advanced OSINT Data Correlation System</p>
+    </header>
+
+    <main class="container">
+        <article class="case-study">
+            <section class="case-section">
+                <h2>Situation</h2>
+                <p>Investigators needed a comprehensive tool for gathering and analyzing social media intelligence. Manual OSINT collection was time-consuming and often missed critical connections between data points. There was a need for an automated solution that could efficiently collect, correlate, and analyze social media data while maintaining investigative integrity.</p>
+                
+                <div class="key-challenges">
+                    <h3>Key Challenges</h3>
+                    <ul>
+                        <li>Complex data collection across multiple platforms</li>
+                        <li>Need for efficient data correlation</li>
+                        <li>Real-time analysis requirements</li>
+                        <li>Data privacy compliance</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="case-section">
+                <h2>Objective</h2>
+                <ul class="objectives-list">
+                    <li>Develop automated social media data collection</li>
+                    <li>Create advanced data correlation engine</li>
+                    <li>Implement visualization of connections</li>
+                    <li>Ensure compliance with privacy regulations</li>
+                    <li>Build user-friendly investigation interface</li>
+                </ul>
+            </section>
+
+            <section class="case-section">
+                <h2>Action</h2>
+                <div class="implementation-details">
+                    <h3>Technical Implementation</h3>
+                    <ul>
+                        <li>Built multi-platform data collection system</li>
+                        <li>Implemented graph database for relationship mapping</li>
+                        <li>Created machine learning-based analysis engine</li>
+                        <li>Developed interactive visualization dashboard</li>
+                    </ul>
+
+                    <div class="code-example">
+                        <h4>Data Correlation Engine</h4>
+                        <pre><code>
+class DataCorrelator:
+    def analyze_connections(self, data_points):
+        # Create relationship graph
+        graph = self.build_graph(data_points)
+        
+        # Identify key connections
+        connections = graph.find_relationships()
+        
+        # Apply ML for pattern recognition
+        patterns = self.ml_engine.analyze(connections)
+        
+        # Generate visualization
+        visualization = self.visualizer.create(
+            patterns,
+            connections,
+            graph
+        )
+        
+        return {
+            'connections': connections,
+            'patterns': patterns,
+            'visualization': visualization
+        }
+                        </code></pre>
+                    </div>
+                </div>
+
+                <div class="security-measures">
+                    <h3>Privacy & Security Features</h3>
+                    <ul>
+                        <li>Data anonymization</li>
+                        <li>Secure API integrations</li>
+                        <li>Audit logging</li>
+                        <li>Access control system</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="case-section">
+                <h2>Results</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-value">75%</span>
+                        <span class="metric-label">Improvement in Data Correlation</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">90%</span>
+                        <span class="metric-label">Time Saved in Analysis</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">100%</span>
+                        <span class="metric-label">Privacy Compliance</span>
+                    </div>
+                </div>
+
+                <div class="key-outcomes">
+                    <h3>Key Outcomes</h3>
+                    <ul>
+                        <li>Significant reduction in analysis time</li>
+                        <li>Improved accuracy in connection identification</li>
+                        <li>Enhanced visualization capabilities</li>
+                        <li>Full compliance with privacy regulations</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="case-section">
+                <h2>Technologies Used</h2>
+                <div class="tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Neo4j</span>
+                    <span class="tech-badge">TensorFlow</span>
+                    <span class="tech-badge">D3.js</span>
+                    <span class="tech-badge">FastAPI</span>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2024 Alonza Blanding Jr | Security Operations Portfolio</p>
+    </footer>
+</body>
+</html>

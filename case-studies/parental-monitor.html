@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parental Monitoring System Case Study - Security Operations Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+    <div class="grid-background"></div>
+    
+    <header class="main-header">
+        <nav class="back-nav">
+            <a href="../index.html">← Back to Portfolio</a>
+        </nav>
+        <h1>Parental Monitoring System</h1>
+        <p class="subtitle">Privacy-Focused Child Safety Solution</p>
+    </header>
+
+    <main class="container">
+        <article class="case-study">
+            <section class="case-section">
+                <h2>Situation</h2>
+                <p>Parents needed a way to protect their children online while respecting their privacy. Existing solutions were either too invasive or didn't provide adequate protection. There was a need for a balanced approach that could protect children while maintaining their dignity and trust.</p>
+                
+                <div class="key-challenges">
+                    <h3>Key Challenges</h3>
+                    <ul>
+                        <li>Balance between monitoring and privacy</li>
+                        <li>Real-time threat detection requirements</li>
+                        <li>Cross-platform compatibility needs</li>
+                        <li>User-friendly interface for parents</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="case-section">
+                <h2>Objective</h2>
+                <ul class="objectives-list">
+                    <li>Create a privacy-respecting monitoring solution</li>
+                    <li>Implement real-time website and application tracking</li>
+                    <li>Develop intelligent threat detection system</li>
+                    <li>Build comprehensive activity reporting</li>
+                    <li>Ensure data security and privacy</li>
+                </ul>
+            </section>
+
+            <section class="case-section">
+                <h2>Action</h2>
+                <div class="implementation-details">
+                    <h3>Technical Implementation</h3>
+                    <ul>
+                        <li>Built Windows service for background monitoring</li>
+                        <li>Implemented ML-based threat detection</li>
+                        <li>Created secure local database for activity logs</li>
+                        <li>Developed parent dashboard interface</li>
+                    </ul>
+
+                    <div class="code-example">
+                        <h4>Threat Detection System</h4>
+                        <pre><code>
+class ThreatDetector:
+    def analyze_activity(self, url, content):
+        # Check against threat database
+        threat_score = self.check_database(url)
+        
+        # Analyze content safety
+        content_score = self.analyze_content(content)
+        
+        # ML-based context analysis
+        context_score = self.ml_model.predict(content)
+        
+        return {
+            'threat_level': self.calculate_risk(
+                threat_score,
+                content_score,
+                context_score
+            ),
+            'recommendations': self.get_recommendations()
+        }
+                        </code></pre>
+                    </div>
+                </div>
+
+                <div class="security-measures">
+                    <h3>Privacy Features</h3>
+                    <ul>
+                        <li>Local-only data storage</li>
+                        <li>Minimal data collection</li>
+                        <li>Transparent monitoring</li>
+                        <li>Age-appropriate filtering</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="case-section">
+                <h2>Results</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-value">98%</span>
+                        <span class="metric-label">Threat Detection Accuracy</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">100%</span>
+                        <span class="metric-label">Privacy Compliance</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">&lt;1s</span>
+                        <span class="metric-label">Response Time</span>
+                    </div>
+                </div>
+
+                <div class="key-outcomes">
+                    <h3>Key Outcomes</h3>
+                    <ul>
+                        <li>High accuracy in threat detection</li>
+                        <li>Minimal performance impact on systems</li>
+                        <li>Positive feedback from both parents and children</li>
+                        <li>Successfully blocked 99.9% of inappropriate content</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="case-section">
+                <h2>Technologies Used</h2>
+                <div class="tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">SQLite</span>
+                    <span class="tech-badge">Windows API</span>
+                    <span class="tech-badge">TensorFlow</span>
+                    <span class="tech-badge">PyQt</span>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2024 Alonza Blanding Jr | Security Operations Portfolio</p>
+    </footer>
+</body>
+</html>

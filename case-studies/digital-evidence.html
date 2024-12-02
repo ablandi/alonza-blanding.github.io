@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/case-study.css">
+    <link rel="stylesheet" href="../css/demo.css">
 </head>
 <body>
     <div class="grid-background"></div>
@@ -124,6 +125,41 @@ def collect_evidence(url):
             </section>
 
             <section class="case-section">
+                <h2>Live Demo</h2>
+                <div class="case-section-content">
+                    <p class="demo-description">Experience a simulated version of the Digital Evidence Suite. This interactive demo showcases key features including evidence collection, hash verification, and chain of custody tracking. Try collecting evidence from a sample URL or viewing the integrity verification process.</p>
+                    
+                    <div class="demo-container">
+                        <div class="demo-header">
+                            <div class="demo-controls">
+                                <span class="control"></span>
+                                <span class="control"></span>
+                                <span class="control"></span>
+                            </div>
+                            <span class="demo-title">Digital Evidence Suite - Demo Environment</span>
+                        </div>
+                        <div class="demo-terminal" id="evidence-demo">
+                            <div class="demo-output"></div>
+                            <div class="demo-input-line">
+                                <span class="prompt">evidence-suite$</span>
+                                <input type="text" class="demo-input" placeholder="Type 'help' for available commands" spellcheck="false">
+                            </div>
+                        </div>
+                        <div class="demo-help">
+                            <h4>Available Commands</h4>
+                            <ul class="command-list">
+                                <li><code>collect [url]</code> - Collect evidence from specified URL</li>
+                                <li><code>verify [hash]</code> - Verify evidence integrity</li>
+                                <li><code>chain</code> - View chain of custody</li>
+                                <li><code>status</code> - View system status</li>
+                                <li><code>help</code> - Show available commands</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-section">
                 <h2>Technologies Used</h2>
                 <div class="tech-stack">
                     <span class="tech-badge">Python</span>
@@ -138,7 +174,8 @@ def collect_evidence(url):
     </main>
 
     <footer class="main-footer">
-        <p>© 2024 Alonza Blanding Jr | Security Operations Portfolio</p>
+        <p> 2024 Alonza Blanding Jr | Security Operations Portfolio</p>
     </footer>
+    <script src="../js/demo.js"></script>
 </body>
 </html>

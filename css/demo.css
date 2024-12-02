@@ -1,0 +1,212 @@
+.demo-container {
+    margin-top: 1.5rem;
+    background: var(--background-color);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.demo-description {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+.demo-header {
+    background: rgba(48, 54, 61, 0.5);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.demo-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-right: 1rem;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(51, 255, 0, 0.2);
+    border: 1px solid var(--accent-color);
+}
+
+.demo-title {
+    color: var(--accent-color);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+}
+
+.demo-terminal {
+    min-height: 300px;
+    padding: 1rem;
+    background: var(--background-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.demo-output {
+    flex: 1;
+    margin-bottom: 1rem;
+    overflow-y: auto;
+    font-family: 'Fira Code', monospace;
+    color: var(--primary-color);
+    line-height: 1.4;
+}
+
+.demo-output .success {
+    color: var(--accent-color);
+}
+
+.demo-output .error {
+    color: #ff4444;
+}
+
+.demo-output .info {
+    color: #4488ff;
+}
+
+.demo-input-line {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+}
+
+.prompt {
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+    font-family: 'Fira Code', monospace;
+}
+
+.demo-input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.demo-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.demo-help {
+    padding: 1rem;
+    background: rgba(48, 54, 61, 0.2);
+    border-top: 1px solid var(--border-color);
+}
+
+.demo-help h4 {
+    color: var(--accent-color);
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.command-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
+.command-list li {
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-family: 'Fira Code', monospace;
+}
+
+.command-list code {
+    color: var(--accent-color);
+    padding: 0.2rem 0.4rem;
+    background: rgba(51, 255, 0, 0.1);
+    border-radius: 4px;
+    margin-right: 0.5rem;
+}
+
+/* Animation for typing effect */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.demo-input::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+/* Resource Monitor */
+.resource-monitor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    padding: 0.75rem;
+    background: rgba(48, 54, 61, 0.2);
+    border-top: 1px solid var(--border-color);
+}
+
+.resource-item {
+    text-align: center;
+}
+
+.resource-label {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+    font-family: 'Fira Code', monospace;
+}
+
+.resource-value {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-family: 'Fira Code', monospace;
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 4px;
+    background: rgba(51, 255, 0, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 0.25rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--accent-color);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Response Types */
+.response-block {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-left: 2px solid var(--accent-color);
+    background: rgba(51, 255, 0, 0.05);
+}
+
+.timestamp {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .command-list {
+        grid-template-columns: 1fr;
+    }
+
+    .resource-monitor {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

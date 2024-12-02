@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/case-study.css">
+    <link rel="stylesheet" href="../css/demo.css">
 </head>
 <body>
     <div class="grid-background"></div>
@@ -134,11 +135,68 @@ class ThreatDetector:
                     <span class="tech-badge">PyQt</span>
                 </div>
             </section>
+
+            <section class="case-section">
+                <h2>Live Demo</h2>
+                <div class="case-section-content">
+                    <p class="demo-description">This demo simulates the Parental Monitoring System's core functionality. Experience real-time activity monitoring, content filtering, and alert generation in a safe demo environment. Try monitoring sample activities or testing the content filtering system.</p>
+                    
+                    <div class="demo-container">
+                        <div class="demo-header">
+                            <div class="demo-controls">
+                                <span class="control"></span>
+                                <span class="control"></span>
+                                <span class="control"></span>
+                            </div>
+                            <span class="demo-title">Parental Monitor - Demo Console</span>
+                        </div>
+                        <div class="demo-terminal" id="monitor-demo">
+                            <div class="demo-output"></div>
+                            <div class="demo-input-line">
+                                <span class="prompt">monitor$</span>
+                                <input type="text" class="demo-input" placeholder="Type 'help' for available commands" spellcheck="false">
+                            </div>
+                        </div>
+                        <div class="resource-monitor">
+                            <div class="resource-item" data-resource="cpu">
+                                <div class="resource-label">CPU Usage</div>
+                                <div class="resource-value">0%</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="resource-item" data-resource="memory">
+                                <div class="resource-label">Memory</div>
+                                <div class="resource-value">0%</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="resource-item" data-resource="alerts">
+                                <div class="resource-label">Active Alerts</div>
+                                <div class="resource-value">0</div>
+                            </div>
+                        </div>
+                        <div class="demo-help">
+                            <h4>Available Commands</h4>
+                            <ul class="command-list">
+                                <li><code>monitor</code> - Start activity monitoring</li>
+                                <li><code>filter [type]</code> - Set content filter type</li>
+                                <li><code>alerts</code> - View recent alerts</li>
+                                <li><code>stats</code> - View monitoring statistics</li>
+                                <li><code>help</code> - Show available commands</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </article>
     </main>
 
     <footer class="main-footer">
-        <p>© 2024 Alonza Blanding Jr | Security Operations Portfolio</p>
+        <p> 2024 Alonza Blanding Jr | Security Operations Portfolio</p>
     </footer>
+    <script src="../js/demo.js"></script>
+    <script src="../js/monitor-demo.js"></script>
 </body>
 </html>

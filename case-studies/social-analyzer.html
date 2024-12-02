@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/case-study.css">
+    <link rel="stylesheet" href="../css/demo.css">
 </head>
 <body>
     <div class="grid-background"></div>
@@ -138,11 +139,65 @@ class DataCorrelator:
                     <span class="tech-badge">FastAPI</span>
                 </div>
             </section>
+
+            <section class="case-section">
+                <h2>Live Demo</h2>
+                <div class="case-section-content">
+                    <p class="demo-description">Experience the Social Media Analyzer in action. This demo showcases the system's ability to collect and analyze social media data, generate sentiment analysis, and identify potential security risks. Try analyzing sample posts or running sentiment analysis on demo content.</p>
+                    
+                    <div class="demo-container">
+                        <div class="demo-header">
+                            <div class="demo-controls">
+                                <span class="control"></span>
+                                <span class="control"></span>
+                                <span class="control"></span>
+                            </div>
+                            <span class="demo-title">Social Analyzer - Demo Environment</span>
+                        </div>
+                        <div class="demo-terminal" id="analyzer-demo">
+                            <div class="demo-output"></div>
+                            <div class="demo-input-line">
+                                <span class="prompt">analyzer$</span>
+                                <input type="text" class="demo-input" placeholder="Type 'help' for available commands" spellcheck="false">
+                            </div>
+                        </div>
+                        <div class="resource-monitor">
+                            <div class="resource-item" data-resource="processing">
+                                <div class="resource-label">Processing</div>
+                                <div class="resource-value">0%</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="resource-item" data-resource="analyzed">
+                                <div class="resource-label">Posts Analyzed</div>
+                                <div class="resource-value">0</div>
+                            </div>
+                            <div class="resource-item" data-resource="sentiment">
+                                <div class="resource-label">Avg Sentiment</div>
+                                <div class="resource-value">N/A</div>
+                            </div>
+                        </div>
+                        <div class="demo-help">
+                            <h4>Available Commands</h4>
+                            <ul class="command-list">
+                                <li><code>analyze [text]</code> - Analyze sample text</li>
+                                <li><code>scan [platform]</code> - Scan social platform</li>
+                                <li><code>report</code> - Generate analysis report</li>
+                                <li><code>trends</code> - View trending topics</li>
+                                <li><code>help</code> - Show available commands</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </article>
     </main>
 
     <footer class="main-footer">
-        <p>© 2024 Alonza Blanding Jr | Security Operations Portfolio</p>
+        <p> 2024 Alonza Blanding Jr | Security Operations Portfolio</p>
     </footer>
+    <script src="../js/demo.js"></script>
+    <script src="../js/analyzer-demo.js"></script>
 </body>
 </html>
